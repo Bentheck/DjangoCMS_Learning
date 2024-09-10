@@ -78,6 +78,8 @@ INSTALLED_APPS = [
     'djangocms_frontend.contrib.navigation',
     'djangocms_frontend.contrib.tabs',
     'djangocms_frontend.contrib.utilities',
+	'polls',
+	'polls_cms_integration',
 ]
 
 MIDDLEWARE = [
@@ -93,6 +95,7 @@ MIDDLEWARE = [
     'cms.middleware.toolbar.ToolbarMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+	 'cms.middleware.utils.ApphookReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'learning_djangocms.urls'
@@ -127,12 +130,7 @@ THUMBNAIL_PROCESSORS = (
 
 CMS_TEMPLATES = [
     # Default template that extend base.html, to be used with Bootstrap 5
-    ('bootstrap5.html', 'Bootstrap 5 Demo'),
-
-    # a minimal template to get started with
-    ('minimal.html', 'Minimal template'),
-
-    ('whitenoise-static-files-demo.html', 'Static File Demo'),
+    ('test123.html', 'test123 template'),
 ]
 
 WSGI_APPLICATION = 'learning_djangocms.wsgi.application'
@@ -208,10 +206,6 @@ SITE_ID = 1
 
 # A base template is part of this setup
 # https://docs.django-cms.org/en/release-4.1.x/reference/configuration.html#cms-templates
-
-CMS_TEMPLATES = (
-    ("base.html", _("Standard")),
-)
 
 # Enable permissions
 # https://docs.django-cms.org/en/release-4.1.x/topics/permissions.html
